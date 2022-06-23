@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navfile"
+    app:startDestination="@id/topicFragment2">
+
+    <fragment
+        android:id="@+id/topicFragment2"
+        android:name="com.example.androidlearn.TopicFragment"
+        android:label="Topics"
+        tools:layout="@layout/fragment_topic" >
+        <action
+            android:id="@+id/action_topicFragment2_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_topicFragment2_to_contactFragment"
+            app:destination="@id/contactFragment" />
+        <action
+            android:id="@+id/action_topicFragment2_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.androidlearn.DetailFragment"
+        android:label="Learn about:"
+        tools:layout="@layout/fragment_detail2" >
+        <argument
+            android:name="aboutTopics"
+            app:argType="com.example.androidlearn.model.Topics"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.example.androidlearn.ContactFragment"
+        android:label="Contact Us"
+        tools:layout="@layout/fragment_contact">
+        <argument
+            android:name="code"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.androidlearn.AboutFragment"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about" />
+
+</navigation>
